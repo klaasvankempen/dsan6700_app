@@ -1,0 +1,99 @@
+<center>
+    <img src={{href}} height=700 />
+    <form method="POST">
+        <label>Input a comma-separated list of features (7)</label>
+        <br>
+        <input name="text" style="height:40px; width:300px">
+        <input type="submit">
+    </form>
+</center>
+
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #e6e6e6;
+            text-align: left;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #e6e6e6;
+        }
+
+        .even-row {
+            background-color: "white";
+        }
+
+        .odd-row {
+            background-color: #e6e6e6;
+        }
+
+        .column1 {
+            background-color: "white";
+        }
+
+        .column2 {
+            background-color: "white";
+        }
+    </style>
+</head>
+
+<h2>Data Dictionary</h2>
+<table>
+    <tr>
+        <th class="column1">Variable</th>
+        <th class="column2">Variable Type</th>
+        <th class="column2">Definition</th>
+    </tr>
+    <tr class="even-row">
+        <td class="column1">step</td>
+        <td class="column2">Continuous</td>
+        <td class="column2">Maps a unit of time in the real world. In this case, 1 step is 1 hour of time. Total steps
+            744 (30 days simulation).</td>
+    </tr>
+    <tr class="odd-row">
+        <td class="column1">type</td>
+        <td class="column2">Continuous</td>
+        <td class="column2">Transaction type: CASH-IN, CASH-OUT, DEBIT, PAYMENT, and TRANSFER.</td>
+    </tr>
+    <tr class="even-row">
+        <td class="column1">amount</td>
+        <td class="column2">Continuous</td>
+        <td class="column2">Amount of the transaction in local currency.</td>
+    </tr>
+    <tr class="odd-row">
+        <td class="column1">oldbalanceOrg</td>
+        <td class="column2">Continuous</td>
+        <td class="column2">Initial balance before the transaction.</td>
+    </tr>
+    <tr class="even-row">
+        <td class="column1">newbalanceOrig</td>
+        <td class="column2">Continuous</td>
+        <td class="column2">New balance after the transaction.</td>
+    </tr>
+    <tr class="odd-row">
+        <td class="column1">oldbalanceDest</td>
+        <td class="column2">Continuous</td>
+        <td class="column2">Initial balance of the recipient before the transaction. Note that there is no information
+            for customers that start with M (Merchants).</td>
+    </tr>
+    <tr class="even-row">
+        <td class="column1">newbalanceDest</td>
+        <td class="column2">Continuous</td>
+        <td class="column2">New balance of the recipient after the transaction. Note that there is no information for
+            customers that start with M (Merchants).</td>
+    </tr>
+    <tr class="odd-row">
+        <td class="column1">isFraud</td>
+        <td class="column2">Continuous</td>
+        <td class="column2">Transactions made by fraudulent agents inside the simulation. The aim is to profit by taking
+            control of customers' accounts and trying to empty the funds by transferring to another account and then
+            cashing out of the system.</td>
+    </tr>
+</table>
