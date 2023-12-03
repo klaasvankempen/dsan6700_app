@@ -46,6 +46,7 @@ def floatsome_to_np_array(floats_str):
     return floats.reshape(len(floats), 1)
 
 df = pd.read_csv("data/clean_data.csv")
+df = df.sample(frac = 0.2, random_state = 91)
 def plot_graphs(model, new_input_arr, output_file):
     fig = make_subplots(rows=1, cols=2)
     boxplot1 = go.Box(
