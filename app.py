@@ -49,10 +49,10 @@ df = pd.read_csv("data/clean_data.csv")
 def plot_graphs(model, new_input_arr, output_file):
     fig = make_subplots(rows=1, cols=2)
     boxplot1 = go.Box(
-        x=df["isFraud"], y=df["newBalanceOrig"], jitter=0.3, pointpos=-1.8
+        x=df["isFraud"], y=df["newBalanceOrig"], jitter=0.3, pointpos=-1.8, boxpoints = "all"
     )
     boxplot2 = go.Box(
-        x=df["isFraud"], y=df["oldBalanceOrig"], jitter=0.3, pointpos=-1.8
+        x=df["isFraud"], y=df["oldBalanceOrig"], jitter=0.3, pointpos=-1.8, boxpoints = "all"
     )
     fig.add_trace(boxplot1, row=1, col=2)
     fig.add_trace(boxplot2, row=1, col=1)
